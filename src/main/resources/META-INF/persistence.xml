@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0" xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+  <!-- Define Persistence Unit -->
+  <persistence-unit name="beauty_skincare_PU">
+    <class>com.beauty.skincare.model.User</class>
+    <class>com.beauty.skincare.model.Product</class>
+    <class>com.beauty.skincare.model.Order</class>
+    <class>com.beauty.skincare.model.OrderItem</class>
+    <class>com.beauty.skincare.model.Promotion</class>
+    <class>com.beauty.skincare.model.Cart</class>
+    <class>com.beauty.skincare.model.CartItem</class>
+   
+    <properties>
+      <!-- MySQL JDBC Driver -->
+      <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <!-- MySQL Database Connection URL (Make sure MySQL is running in XAMPP) -->
+      <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/beauty_skincare?serverTimezone=UTC"/>
+      <!-- MySQL Credentials (Replace with your actual MySQL username/password) -->
+      <property name="jakarta.persistence.jdbc.user" value="root"/>
+      <property name="jakarta.persistence.jdbc.password" value=""/>
+      <!-- Ensure Hibernate updates schema automatically -->
+      <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <property name="hibernate.show_sql" value="true"/>
+    </properties>
+  </persistence-unit>
+</persistence>
